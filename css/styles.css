@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #f5f5f5;
+    --primary: #f1356d;
+    --secondary: #333;
+    --tertiary: #ccc;
+    --quaternary: #666;
+    --main-font: 'VT323', monospace;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Global */
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-family: var(--main-font)
+}
+
+.container {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-inline: auto;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
