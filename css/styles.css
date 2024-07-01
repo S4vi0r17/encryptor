@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 :root {
+    --primary: #631d28;
+    --black: #050004;
     --white: #ffffff;
-    --black: #000000;
-    --gray: #f5f5f5;
-    --primary: #f1356d;
-    --secondary: #333;
-    --tertiary: #ccc;
-    --quaternary: #666;
+    --gray: #bdbdbd;
+    --quaternary: #11181e;
     --main-font: 'VT323', monospace;
 }
 
@@ -25,42 +23,184 @@ html {
 /* Global */
 
 body {
-    background-color: #000000;
+    background-color: var(--black);
     color: #ffffff;
     font-size: 1.6rem;
-    font-family: var(--main-font)
-}
-
-.container {
-    max-width: 120rem;
-    width: 90%;
+    font-family: var(--main-font);
+    max-width: 110rem;
+    width: 95%;
     margin: 0 auto;
     margin-inline: auto;
+}
+
+textarea {
+    background-color: var(--quaternary);
+    color: var(--gray);
+    border: none;
 }
 
 h1 {
     font-size: 5rem;
 }
 
-h2 {
-    font-size: 2.8rem;
-}
-
-h3 {
-    font-size: 2.5rem;
-}
-
 p {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h1,
 h2,
-h3 {
+p {
     text-align: center;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.header {
+
+    .title {
+        margin-bottom: 0;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    .input {
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+        font-size: 2.5rem;
+        resize: none;
+        height: 40rem;
+        outline: none;
+    }
+
+    .info {
+        text-align: left;
+        margin: 0;
+        padding: 1.8rem 1rem;
+        color: var(--gray);
+        border-radius: 1rem;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1rem;
+        font-size: 3.2rem;
+
+        & .encrypt {
+            flex-grow: 1;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        & .decrypt {
+            flex-grow: 1;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 1px solid var(--primary);
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: var(--primary);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.aside {
+
+    .text {
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+        font-size: 2.5rem;
+        resize: none;
+        height: 40rem;
+        outline: none;
+    }
+
+    .button {
+        margin-top: 1rem;
+        font-size: 3.2rem;
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--black);
+        color: var(--white);
+        border: 1px solid var(--primary);
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: var(--primary);
+            cursor: pointer;
+        }
+    }
+}
+
+.footer {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gray);
+    margin-top: 3rem;
+}
+
+/* Media Queries */
+@media (width >= 768px) {
+
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .container {
+        flex-direction: row;
+        gap: 4rem;
+        justify-content: space-between;
+
+        & .main {
+            width: 70%;
+        }
+
+        & .aside {
+            width: 30%;
+        }
+    }
+
+    .main {
+
+        .info {
+            padding: 2rem 1rem;
+        }
+
+        .input {
+            height: 45rem;
+        }
+    }
+
+    .aside {
+
+        .button {
+            display: block;
+            margin: 0 auto;
+            margin-top: 5.8rem;
+        }
+
+        .text {
+            height: 45rem;
+        }
+    }
 }
